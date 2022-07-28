@@ -25,11 +25,8 @@ const reverse = require("../reversestring");
 // }
 
 function reverseInt(n) {
-  const sign = Math.sign(n) === 1 ? 1 : -1;
   const str = n + "";
-  if (n !== 0) {
-    return sign * parseInt(str.split("").reverse().join(""));
-  } else return 0;
+  return Math.sign(n) * parseInt(str.split("").reverse().join(""));
 }
 
 module.exports = reverseInt;
