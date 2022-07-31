@@ -9,11 +9,7 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-  const a = cleanString(stringA);
-  const b = cleanString(stringB);
-  if (a === b) {
-    return true;
-  }
+  return cleanString(stringA) === cleanString(stringB);
 }
 
 function cleanString(str) {
