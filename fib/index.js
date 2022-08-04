@@ -8,16 +8,37 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {
-  const fibonacci = [0];
-  for (let i = 1; i <= n; i++) {
-    if (i === 1) {
-      fibonacci.push(fibonacci[i - 1] + i);
-    } else {
-      fibonacci.push(fibonacci[i - 2] + fibonacci[i - 1]);
-    }
+function slowFib(n) {
+  if (n < 2) {
+    return n;
   }
-  return fibonacci[n];
+  return fib(n - 1) + fib(n - 2);
 }
+
+function memoize(fn) {
+  //declare some storage area
+  const cache = {};
+  return function (...args) {
+    if (cache[args]) {
+      return cache[args];
+    }
+    const result = fn.apply(this, args);
+    cache[args] = result;
+    return result;
+  };
+}
+
+const fib = memoize(slowFib);
+// function fib(n) {
+//   const fibonacci = [0];
+//   for (let i = 1; i <= n; i++) {
+//     if (i === 1) {
+//       fibonacci.push(fibonacci[i - 1] + i);
+//     } else {
+//       fibonacci.push(fibonacci[i - 2] + fibonacci[i - 1]);
+//     }
+//   }
+//   return fibonacci[n];
+// }
 
 module.exports = fib;
