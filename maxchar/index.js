@@ -32,12 +32,30 @@
 //   }
 // }
 
+// function maxChar(str) {
+//   const charObj = {};
+//   for (let char of str) {
+//     charObj[char] = charObj[char] + 1 || 1;
+//   }
+//   const arr = Object.values(charObj);
+//   return Object.keys(charObj).find((c) => charObj[c] === Math.max(...arr));
+// }
 function maxChar(str) {
   const charObj = {};
+  let max = 0;
+  let maxChar = "";
   for (let char of str) {
     charObj[char] = charObj[char] + 1 || 1;
   }
-  const arr = Object.values(charObj);
-  return Object.keys(charObj).find((c) => charObj[c] === Math.max(...arr));
+  // const arr = Object.values(charObj);
+  // return Object.keys(charObj).find((c) => charObj[c] === Math.max(...arr));
+
+  for (let char in charObj) {
+    if (charObj[char] > max) {
+      max = charObj[char];
+      maxChar = char;
+    }
+  }
+  return maxChar;
 }
 module.exports = maxChar;
