@@ -26,6 +26,7 @@ class Node {
     });
   }
 }
+s;
 
 class Tree {
   constructor() {

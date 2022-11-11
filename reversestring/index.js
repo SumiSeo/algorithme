@@ -15,12 +15,23 @@
 //   debugger;
 //   return str.split("").reduce((p, cur) => cur + p, "");
 // }
+// function reverse(str) {
+//   let reversed = "";
+//   for (let c of str) {
+//     reversed = c + reversed;
+//     debugger;
+
+//   }
+// function reverse(str) {
+//   const strArr = str.split("");
+//   return strArr.reverse().join("");
+// }
 function reverse(str) {
-  let reversed = "";
-  for (let c of str) {
-    reversed = c + reversed;
-    debugger;
-  }
+  const result = [];
+  str.split("").forEach((a) => {
+    result.unshift(a);
+  });
+  return result.join("");
 }
 
 reverse("asdf");
