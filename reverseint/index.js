@@ -24,9 +24,12 @@ const reverse = require("../reversestring");
 //   }
 // }
 
+// function reverseInt(n) {
+//   const str = n + "";
+//   return Math.sign(n) * parseInt(str.split("").reverse().join(""));
+// }
 function reverseInt(n) {
-  const str = n + "";
-  return Math.sign(n) * parseInt(str.split("").reverse().join(""));
+  return parseInt(n.toString().split("").reverse().join("")) * Math.sign(n);
 }
 
 module.exports = reverseInt;
