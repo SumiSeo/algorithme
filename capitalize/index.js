@@ -15,12 +15,23 @@
 //   return capitalizedStr.join(" ");
 // }
 
+// function capitalize(str) {
+//   const arr = [];
+//   str.split(" ").forEach((s) => {
+//     arr.push(s[0].toUpperCase() + s.slice(1));
+//   });
+//   return arr.join(" ");
+// }
+
 function capitalize(str) {
-  const arr = [];
-  str.split(" ").forEach((s) => {
-    arr.push(s[0].toUpperCase() + s.slice(1));
-  });
-  return arr.join(" ");
+  let result = str[0].toUpperCase();
+
+  for (let i = 1; i < str.length; i++) {
+    if (str[i - 1] === " ") {
+      result += str[i].toUpperCase();
+    } else result += str[i];
+  }
+  return result;
 }
 
 module.exports = capitalize;
