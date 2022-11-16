@@ -29,22 +29,23 @@
 //   }
 // }
 
-function steps(n, row = 0, stair = "") {
-  if (n === row) {
-    return;
+// function steps(n, row = 0, stair = "") {}
+function steps(n) {
+  //draw the question ->for lopp
+  for (let row = 0; row < n; row++) {
+    let step = "";
+    for (let column = 0; column < n; column++) {
+      if (column <= row) {
+        step += "#";
+      } else step += " ";
+    }
+    console.log(step);
   }
 
-  if (n === stair.length) {
-    console.log(stair);
-    return steps(n, row + 1);
-  }
+  //find the rules ->if statement
 
-  if (stair.length <= row) {
-    stair += "#";
-  } else {
-    stair += " ";
-  }
-  steps(n, row, stair);
+  //solve the problem -> return what ?
+  return;
 }
 
 module.exports = steps;

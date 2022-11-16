@@ -14,19 +14,29 @@
 //       ' ### '
 //       '#####'
 
+// function pyramid(n) {
+//   let iterNum = n + n - 1;
+//   const midpoint = Math.floor(iterNum / 2);
+//   for (let i = 0; i < n; i++) {
+//     let level = "";
+//     for (let j = 0; j < iterNum; j++) {
+//       if (midpoint - i <= j && midpoint + i >= j) {
+//         level += "#";
+//       } else {
+//         level += " ";
+//       }
+//     }
+//     console.log(level);
+//   }
+// }
+
 function pyramid(n) {
-  let iterNum = n + n - 1;
-  const midpoint = Math.floor(iterNum / 2);
-  for (let i = 0; i < n; i++) {
-    let level = "";
-    for (let j = 0; j < iterNum; j++) {
-      if (midpoint - i <= j && midpoint + i >= j) {
-        level += "#";
-      } else {
-        level += " ";
-      }
+  let floor = n-1+n;
+  for (let row = 0; row < n; row++) {
+    let step = "";
+    for(let column = 0; column<floor; column++){
+      
     }
-    console.log(level);
   }
 }
 
