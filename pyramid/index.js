@@ -25,18 +25,23 @@
 //       } else {
 //         level += " ";
 //       }
-//     }
+//     } f
 //     console.log(level);
 //   }
 // }
 
 function pyramid(n) {
-  let floor = n-1+n;
+  const midpoint = Math.floor((2 * n - 1) / 2);
   for (let row = 0; row < n; row++) {
-    let step = "";
-    for(let column = 0; column<floor; column++){
-      
+    let level = "";
+    for (let column = 0; column < 2 * n - 1; column++) {
+      if (midpoint - row <= column && midpoint + row >= column) {
+        level += "#";
+      } else {
+        level += " ";
+      }
     }
+    console.log(level);
   }
 }
 

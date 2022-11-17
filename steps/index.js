@@ -30,22 +30,33 @@
 // }
 
 // function steps(n, row = 0, stair = "") {}
+// function steps(n) {
+//   //draw the question ->for lopp
+//   for (let row = 0; row < n; row++) {
+//     let step = "";
+//     for (let column = 0; column < n; column++) {
+//       if (column <= row) {
+//         step += "#";
+//       } else step += " ";
+//     }
+//     console.log(step);
+//   }
+
+//   //find the rules ->if statement
+
+//   //solve the problem -> return what ?
+//   return;
+// }
 function steps(n) {
-  //draw the question ->for lopp
-  for (let row = 0; row < n; row++) {
+  for (let i = 0; i < n; i++) {
     let step = "";
-    for (let column = 0; column < n; column++) {
-      if (column <= row) {
+    for (let j = 0; j < n; j++) {
+      if (i >= j) {
         step += "#";
       } else step += " ";
     }
     console.log(step);
   }
-
-  //find the rules ->if statement
-
-  //solve the problem -> return what ?
-  return;
 }
 
 module.exports = steps;
