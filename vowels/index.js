@@ -14,19 +14,12 @@
 
 function vowels(str) {
   const vowels = "aeiou";
-  const arr = [];
-  str
+  return str
     .split(" ")
     .join("")
     .toLowerCase()
     .split("")
-    .forEach((s) => {
-      if (vowels.split("").indexOf(s) !== -1) {
-        arr.push(s);
-      }
-    });
-
-  return arr.length;
+    .filter((s) => vowels.split("").indexOf(s) !== -1).length;
 }
 
 // function vowels(str) {
