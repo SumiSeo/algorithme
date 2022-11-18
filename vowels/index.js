@@ -7,9 +7,26 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
+// function vowels(str) {
+//   const matches = str.match(/[aeiou]/gi);
+//   return matches ? matches.length : 0;
+// }
+
 function vowels(str) {
-  const matches = str.match(/[aeiou]/gi);
-  return matches ? matches.length : 0;
+  const vowels = "aeiou";
+  const arr = [];
+  str
+    .split(" ")
+    .join("")
+    .toLowerCase()
+    .split("")
+    .forEach((s) => {
+      if (vowels.split("").indexOf(s) !== -1) {
+        arr.push(s);
+      }
+    });
+
+  return arr.length;
 }
 
 // function vowels(str) {
