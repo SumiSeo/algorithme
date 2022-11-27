@@ -19,10 +19,12 @@ class Queue {
     this.first = new Stack();
     this.second = new Stack();
   }
+
   add(record) {
     this.first.push(record);
   }
-  remove(record) {
+
+  remove() {
     while (this.first.peek()) {
       this.second.push(this.first.pop());
     }
@@ -32,6 +34,7 @@ class Queue {
     }
     return record;
   }
+
   peek() {
     while (this.first.peek()) {
       this.second.push(this.first.pop());
